@@ -1,5 +1,6 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmdlbWlyIiwiYSI6ImNqcGlkYzNxbzBzamUzcW1zb2YxMmpybHgifQ.GBnR3uwlJIFJ2FLL6KQvig';
 const mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+
 export function mapBoxGenerator(insertedAddress) {
   let address;
   if (!insertedAddress) {
