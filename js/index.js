@@ -16,43 +16,43 @@ input.addEventListener('focus', (evento) => {
 // Input Mask end ---------------------------
 
 //Google MAP API START -------------------------------
-let address = "Avenida paulista, São Paulo, SP, Brasil";
+// let address = "Avenida paulista, São Paulo, SP, Brasil";
 
-function googleinitialize() {
-  let map;
-  let latInfo;
-  let lngInfo;
+// function googleinitialize() {
+//   let map;
+//   let latInfo;
+//   let lngInfo;
 
-  //collect address lat and lng
-  geocoder = new google.maps.Geocoder();
-  geocoder.geocode({
-    address: address
-  }, (results, status) => {
-    if (status == google.maps.GeocoderStatus.OK) {
-      latInfo = results[0].geometry.location.lat();
-      lngInfo = results[0].geometry.location.lng();
+//   //collect address lat and lng
+//   geocoder = new google.maps.Geocoder();
+//   geocoder.geocode({
+//     address: address
+//   }, (results, status) => {
+//     if (status == google.maps.GeocoderStatus.OK) {
+//       latInfo = results[0].geometry.location.lat();
+//       lngInfo = results[0].geometry.location.lng();
 
-      let geoPosition = { lat: latInfo, lng: lngInfo };
+//       let geoPosition = { lat: latInfo, lng: lngInfo };
 
-      //Show map
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: geoPosition,
-        zoom: 14,
-      });
+//       //Show map
+//       map = new google.maps.Map(document.getElementById("map"), {
+//         center: geoPosition,
+//         zoom: 14,
+//       });
 
-      //show marker
-      const marker = new google.maps.Marker({
-        position: geoPosition,
-        map: map,
-      });
+//       //show marker
+//       const marker = new google.maps.Marker({
+//         position: geoPosition,
+//         map: map,
+//       });
 
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
+//     } else {
+//       alert('Geocode was not successful for the following reason: ' + status);
+//     }
+//   });
 
-  window.googleinitialize = googleinitialize;
-}
+//   window.googleinitialize = googleinitialize;
+// }
 //Google MAP API END---------------------------------
 
 //Mapbox Initialize *******
