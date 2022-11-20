@@ -13,10 +13,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 
-  <!-- MAP API -->
-  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css"
-    type="text/css" />
+  <!-- MAP API MapBox -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+
 
   <!-- Style CSS -->
   <link rel="stylesheet" href="css/style.css" />
@@ -25,6 +25,10 @@
 </head>
 
 <body>
+  <!-- Load the `mapbox-gl-geocoder` plugin. -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
   <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
       <h1 class="navbar-brand">InterCEPtei</h1>
@@ -72,7 +76,7 @@
       </section>
 
       <section class="col-md-12 col-lg-6">
-        <div id="map" class="map"></div>
+        <div id="map"></div>
       </section>
     </div>
   </main>
@@ -86,13 +90,11 @@
   <script src="https://unpkg.com/imask"></script>
 
   <!-- MAP API -->
-  <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initialize&v=weekly"
-      defer
-    ></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=googleinitialize&v=weekly" defer></script> -->
+  <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 
   <!-- Site JS -->
-  <script src="js/index.js"></script>
+  <script type="module" src="js/index.js"></script>
 </body>
 
 </html>
